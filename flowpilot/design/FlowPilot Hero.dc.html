@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}html,body{margin:0}.page{min-height:100vh;background:#f4f2ec;color:#16140d;font-family:'Inter',sans-serif;padding:30px 64px 70px;-webkit-font-smoothing:antialiased}.wrap{max-width:1340px;margin:0 auto}.serif{font-family:'Instrument Serif',serif;font-weight:400}.sans{font-family:'Inter',sans-serif}.ink{color:#16140d}.indigo{color:var(--accent,#3a48d6)}.emerald{color:#0f9d58}.muted{color:#9a9081}.i{font-style:italic}.dot-green{width:8px;height:8px;border-radius:50%;background:#0f9d58;display:inline-block;flex:none}.sq{width:10px;height:10px;border-radius:2px;background:var(--accent,#3a48d6);display:inline-block;flex:none}.diamond{color:var(--accent,#3a48d6);font-size:9px;line-height:1}.hdr{padding-bottom:8px}.logo{font-size:21px;letter-spacing:-0.01em}.nav a{color:#3c382e;font-size:15px;text-decoration:none}.btn-dark{background:#16140d;color:#fff;border:none;border-radius:999px;padding:13px 26px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;cursor:pointer;letter-spacing:-0.01em}.btn-launch{padding:12px 24px;font-size:14px}.btn-text{background:none;border:none;color:#16140d;font-family:'Inter',sans-serif;font-weight:500;font-size:15px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(22,20,13,.25);padding:13px 6px}.hero{display:grid;grid-template-columns:1.02fr 1fr;gap:84px;align-items:start;margin-top:78px}.eyebrow{font-size:14px;margin-bottom:22px}.headline{font-size:80px;line-height:0.98;letter-spacing:-0.015em;margin:0}.lead{font-size:19px;line-height:1.55;color:#4d473b;max-width:440px;margin:30px 0 36px}.caption{font-size:14px;margin:30px 0 0}.card{background:#fff;border:1px solid rgba(22,20,13,.06);border-radius:18px;padding:26px 30px 28px;box-shadow:0 30px 70px -28px rgba(22,20,13,.28),0 6px 18px -10px rgba(22,20,13,.12);will-change:transform}.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(15,157,88,.09);color:#0f9d58;font-size:13px;font-weight:600;padding:6px 12px 6px 11px;border-radius:999px;margin-bottom:20px}.card-head{margin-bottom:6px}.sub{font-size:13.5px;margin:0 0 20px}.items{display:flex;flex-direction:column}.item{padding:11px 0;border-bottom:1px solid rgba(22,20,13,.05)}.total-row{margin-top:22px}.total{font-size:60px;line-height:0.9;letter-spacing:-0.01em}.tools{justify-content:flex-end;margin-top:8px}.actions{margin-top:22px}.wide{flex:1;text-align:center}.fs12{font-size:12px}.fs13{font-size:13px}.fs15{font-size:15px}</style></helmet><div class="page" style="{{ rootStyle }}"><div class="wrap"><div class="fx ac jb hdr"><div class="fx ac gap8 logo fw7 ink"><span class="sq"></span>Flow<span class="indigo serif i" style="font-size:24px">Pilot</span></div><div class="fx ac gap24 nav"><a href="#">How it works</a><a href="#">The agent</a><a href="#">Demo</a></div><button class="btn-dark btn-launch">Launch demo</button></div><div class="hero"><div class="col"><div class="fx ac gap8 eyebrow"><span class="dot-green"></span><span class="muted">Autonomous agent · human sign-off</span></div><h1 class="headline serif ink">Your front desk,<br><span class="indigo i">on autopilot.</span></h1><p class="lead sans">FlowPilot turns chaotic customer inquiries into approved quotes in 30 seconds — autonomous reasoning, real tools, human sign-off.</p><div class="fx ac gap16"><button class="btn-dark">See it work</button><button class="btn-text">How it works</button></div><p class="caption muted sans">Demo company · Northwind Heating &amp; Cooling</p></div><div class="col"><div class="card sans" style="{{ cardStyle }}"><div class="pill" style="{{ pillStyle }}"><span class="dot-green"></span>Drafted in 31s</div><div class="fx ac jb card-head" style="{{ headStyle }}"><div class="fx ac gap8"><span class="sq"></span><span class="fw6 ink fs15">Draft quote</span></div><div class="fx ac gap8"><span class="dot-green"></span><span class="emerald fw6 fs13">85% confidence</span></div></div><p class="sub muted" style="{{ subStyle }}">Whitfield residence · AC blower fault · Maple Grove</p><div class="items"><sc-for list="{{ items }}" as="row" hint-placeholder-count="5"><div class="fx ac jb item" style="{{ row.style }}"><span class="ink fs15">{{ row.label }}</span><span class="ink fw6 fs15 nowrap">{{ row.price }}</span></div></sc-for></div><div class="fx jb total-row" style="{{ totalStyle }}"><span class="muted fs13" style="margin-top:auto;padding-bottom:8px">Estimated total</span><span class="serif emerald total nowrap">{{ totalText }}</span></div><div class="fx ac gap8 tools" style="{{ toolsStyle }}"><span class="diamond">◆</span><span class="muted fs12">5 tools used</span></div><div class="fx ac gap16 actions" style="{{ actionsStyle }}"><button class="btn-dark wide">Approve &amp; send</button><button class="btn-text">Edit</button></div></div></div></div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:820},&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3a48d6&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#3a48d6&quot;,&quot;#0f9d58&quot;,&quot;#d6443a&quot;,&quot;#16140d&quot;]},&quot;totalAmount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4746,&quot;min&quot;:500,&quot;max&quot;:99999,&quot;tsType&quot;:&quot;number&quot;},&quot;speed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.1,&quot;min&quot;:0.5,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  state = { t: 0 };
+  componentDidMount() {
+    this.start = performance.now();
+    this.timer = setInterval(() => {
+      this.setState({ t: (performance.now() - this.start) / 1000 });
+    }, 33);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const accent = this.props.accentColor ?? '#3a48d6';
+    const target = this.props.totalAmount ?? 4746;
+    const speed = this.props.speed ?? 1;
+    const L = 9.2;
+    const t = (((this.state.t || 0) * speed) % L);
+    const clamp = x => Math.max(0, Math.min(1, x));
+    const eOut = x => 1 - Math.pow(1 - x, 3);
+    const eExpo = x => x >= 1 ? 1 : 1 - Math.pow(2, -10 * x);
+    const eInOut = x => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+    const live = t < 8.0 ? 1 : 1 - eInOut(clamp((t - 8.0) / 1.0));
+    const appear = (start, dur, dist = 12) => {
+      const p = eOut(clamp((t - start) / dur));
+      return { opacity: +(p * live).toFixed(3), transform: `translateY(${((1 - p) * dist).toFixed(2)}px)` };
+    };
+    const data = [
+      ['Diagnostic visit & inspection', '$129.00'],
+      ['Blower motor replacement — labor', '$340.00'],
+      ['OEM blower motor (Carrier)', '$485.00'],
+      ['Refrigerant top-off & leak check', '$165.00'],
+      ['Condenser coil clean & tune', '$210.00'],
+    ];
+    const items = data.map((d, i) => ({ label: d[0], price: d[1], style: appear(1.5 + i * 0.42, 0.6, 14) }));
+    const cp = eExpo(clamp((t - 2.4) / 2.4));
+    const val = target * cp;
+    const totalText = '$' + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const float = (Math.sin(t * 0.7) * 3).toFixed(2);
+    return {
+      rootStyle: { '--accent': accent },
+      cardStyle: { transform: `translateY(${float}px)` },
+      pillStyle: appear(0.4, 0.6, 8),
+      headStyle: appear(0.75, 0.55),
+      subStyle: appear(1.0, 0.55),
+      items,
+      totalStyle: appear(1.7, 0.55),
+      totalText,
+      toolsStyle: appear(4.5, 0.6),
+      actionsStyle: appear(4.8, 0.7),
+    };
+  }
+}
+</script>
+<template id="__bundler_thumbnail" data-bg-color="#f4f2ec">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#f4f2ec"/><rect x="690" y="190" width="420" height="430" rx="26" fill="#ffffff" stroke="rgba(22,20,13,0.07)"/><rect x="720" y="225" width="150" height="34" rx="17" fill="rgba(15,157,88,0.12)"/><circle cx="740" cy="242" r="6" fill="#0f9d58"/><rect x="720" y="300" width="240" height="14" rx="7" fill="rgba(22,20,13,0.12)"/><rect x="720" y="340" width="300" height="14" rx="7" fill="rgba(22,20,13,0.12)"/><rect x="720" y="380" width="270" height="14" rx="7" fill="rgba(22,20,13,0.12)"/><rect x="720" y="420" width="290" height="14" rx="7" fill="rgba(22,20,13,0.12)"/><text x="720" y="560" font-family="Georgia,serif" font-style="italic" font-size="72" fill="#0f9d58">$4,746</text><rect x="90" y="250" width="18" height="18" rx="4" fill="#3a48d6"/><text x="90" y="430" font-family="Georgia,serif" font-style="italic" font-size="78" fill="#16140d">Front desk,</text><text x="90" y="510" font-family="Georgia,serif" font-style="italic" font-size="78" fill="#3a48d6">on autopilot.</text></svg>
+</template>
+</body>
+</html>

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { HeroQuoteCard } from "./HeroQuoteCard";
 import "../landing.css";
 
 export function Landing() {
@@ -80,47 +81,8 @@ export function Landing() {
           </div>
         </div>
 
-        <div className="reveal d2" style={{ position: "relative" }}>
-          <div className="card qcard">
-            <div className="qtop">
-              <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
-                <span className="dot" style={{ margin: 0 }} />
-                <span style={{ fontWeight: 600, fontSize: 14 }}>Draft quote</span>
-              </div>
-              <span className="conf">
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#0f9d58", display: "inline-block" }} />
-                85% confidence
-              </span>
-            </div>
-            <div className="muted" style={{ fontSize: 12.5, marginBottom: 14 }}>
-              Whitfield residence · AC blower fault · Maple Grove
-            </div>
-            {[
-              ["Diagnostic visit & inspection", "$129.00"],
-              ["Blower motor replacement — labor", "$340.00"],
-              ["OEM blower motor (Carrier)", "$485.00"],
-              ["Refrigerant top-off & leak check", "$165.00"],
-            ].map(([l, a]) => (
-              <div className="li" key={l}>
-                <span className="lbl">{l}</span>
-                <span className="amt">{a}</span>
-              </div>
-            ))}
-            <div className="li" style={{ border: "none" }}>
-              <span className="lbl">Condenser coil clean &amp; tune</span>
-              <span className="amt">$210.00</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginTop: 16 }}>
-              <span className="muted" style={{ fontSize: 13, paddingBottom: 8 }}>Estimated total</span>
-              <span className="bigtot serif emerald">$4,746.00</span>
-            </div>
-            <div className="appbar">
-              <Link className="pill" to="/app" style={{ flex: 1, justifyContent: "center" }}>Approve &amp; send</Link>
-              <Link className="ghost" to="/app">Edit</Link>
-            </div>
-          </div>
-          <div className="float" style={{ top: -18, left: -26 }}><span className="tagdot" />Drafted in 31s</div>
-          <div className="float" style={{ bottom: 64, right: -30 }}><span style={{ color: "#3a48d6" }}>◆</span>5 tools used</div>
+        <div className="reveal d2">
+          <HeroQuoteCard />
         </div>
       </div>
 
