@@ -1,77 +1,87 @@
 # FlowPilot — 3-Minute Demo Script
 
-Goal: in 3 minutes, a judge should see the problem, watch named agents work with a
-live trace, see a math guardrail + risk tiering, approve with one click, and learn it
-runs on Qwen Cloud + Alibaba Cloud.
+Goal: in 3 minutes a judge should see the problem, meet a named team of agents working a
+live trace, see a math guardrail and risk tiering, approve with one click, and learn it
+runs on Qwen Cloud and Alibaba Cloud.
 
-**Before recording:** reset the inbox → `python seed_demo.py` (clean 6 leads). Have the
-app open at the **landing page** (`/`). Record at 1440px wide, browser maximized.
+**Before recording:** reset the inbox with `python seed_demo.py` (clean 6 leads). Open the
+app at the **landing page** (`/`). Record at 1440px wide, browser maximized. Give the
+landing a second to load so the hero animation is mid-loop when you start.
 
 ---
 
 ### 0:00–0:25 · The hook (landing page)
-> "Home-service businesses — HVAC, plumbing — lose jobs to slow quotes. Pricing one
+> "Home-service businesses, HVAC and plumbing, lose jobs to slow quotes. Pricing one
 > inquiry by hand takes 15 to 30 minutes, and customers hire whoever replies first.
-> This is **FlowPilot** — it turns a messy inquiry into an approved quote in under a
-> minute."
+> This is **FlowPilot**. It turns a messy inquiry into an approved quote in under a minute."
 
-- Scroll the landing slowly: hero → "Slow quotes lose jobs" → the 4-step how-it-works → the agent-trace section.
+- Open on the **animated hero**: the quote card builds itself and the total counts up to **$4,746**. Let that play for a beat, it sells the whole idea instantly.
+- Scroll slowly: "Slow quotes lose jobs" → the four-step how-it-works → the agent-trace section.
 - Click **Launch demo**.
 
 ### 0:25–0:45 · The inbox
-> "This is the dispatcher's inbox — real inquiries, each tiered by status: needs
-> approval, agent working, confirmed. Let's bring in a brand-new one."
+> "This is the dispatcher's inbox. Real inquiries, each tiered by status: needs approval,
+> agent working, confirmed. Let's bring in a brand-new one."
 
-- Click **+ New inquiry** → click the **"Emergency AC"** preset (shows a messy, panicked text) → **Submit to FlowPilot**.
+- Click **+ New inquiry** → click the **"Emergency AC"** preset (a messy, panicked text) → **Submit to FlowPilot**.
 
-### 0:45–1:30 · Watch the agents work (the centerpiece)
-> "FlowPilot isn't one prompt — it's a pipeline of specialized agents. The **Intake
-> Qualifier** reads the mess and pulls out intent and urgency. The **Quote Specialist**
-> then calls real tools — the pricing book, the calendar — and builds an itemized quote.
-> A deterministic **Validator** re-checks every number, and a **Risk Router** flags how
-> closely a human should look."
+### 0:45–1:30 · Meet the team (the centerpiece)
+> "FlowPilot isn't one prompt, it's a small team of agents, each with one job. **Gwen**
+> reads the mess and works out the job and urgency. **Max** then calls real tools, the
+> pricing book and the calendar, and builds the itemized quote. **Ledger** re-checks every
+> number, and **Sentry** decides how closely a human should look."
 
-- Let the animated timeline play through the four stages.
+- Let the animated timeline play through Gwen → Max → Ledger → Sentry (each with its avatar).
 - Click **Review the draft quote →**.
 
-### 1:30–2:20 · The review screen (production-readiness + HITL)
-> "Here's the human-in-the-loop checkpoint — nothing reaches the customer without me.
-> On the left, the **full agent trace**: every model call and tool, with the model used
-> and how long it took."
+### 1:30–2:25 · The review screen (the magic moment)
+> "This is the human-in-the-loop checkpoint, nothing reaches the customer without me. And
+> instead of a wall of logs, the team just briefs me in plain language."
 
-- Open one trace row (e.g. `get_pricing_book`) to show the real tool output.
+- Read 2 of the **"What the team found"** bubbles out loud, e.g.
+  Ledger: *"I re-added every line by hand, the math is exact at $1,580.59."*
+  Sentry: *"I'm flagging this high-risk, emergency job, time pressure. Give it a close look."*
 
-> "On the right, the quote — and notice the **risk banner**. This one's high-risk because
-> it's high-value with several assumptions, so it's telling me to look closely. It even
-> lists the exact assumptions it made instead of hiding them."
+> "Notice the **risk banner**. High-risk because it's high-value with several assumptions,
+> so it's telling me where to focus. And it lists the exact assumptions it made instead of
+> hiding them."
 
 - Point at the risk banner + the "Assumptions to verify" list.
-- Click a note preset (e.g. *"How long has this been going on?"*) → **Approve & send**.
+- Expand the **full agent trace** underneath to show the real tool calls, model, and timing (`Gwen · qwen3.5-flash · 1180ms`, `Max · qwen3.7-max`).
+- Click a note preset (e.g. *"We'll prioritise getting a tech out to you quickly."*) → **Approve & send**.
 
-### 2:20–2:40 · Confirmation
-> "On approval, the **Confirmation Writer** drafts the customer email — warm, human, ready
-> to go. The whole loop, intake to confirmed, in under a minute."
+### 2:25–2:40 · Confirmation
+> "On approval, **Quill** writes the customer email, warm and human, and holds the slot.
+> The whole loop, intake to confirmed, in under a minute."
 
 - Show the confirmation email + the green success state.
 
 ### 2:40–3:00 · The close
-> "Every agent runs on **Qwen Cloud** — qwen3.7-max for the reasoning and tool use,
-> qwen3.5-flash for extraction and drafting — deployed on **Alibaba Cloud**. Autonomous
-> where it's safe, supervised where it counts. That's FlowPilot."
+> "The team runs on **Qwen Cloud**, qwen3.7-max for the reasoning and tool use, qwen3.5-flash
+> for extraction and drafting, deployed on **Alibaba Cloud**. Autonomous where it's safe,
+> supervised where it counts. That's FlowPilot."
 
 - (Optional) cut to the public Alibaba URL in the address bar, or the GitHub repo.
 
 ---
 
-## Talking points to hit (rubric coverage)
-- **Multi-agent pipeline** + **model routing** (max vs flash) → Technical Depth (30%)
-- **Deterministic Validator guardrail** between AI steps → production-readiness
-- **Risk-tiered human-in-the-loop** → Innovation (30%)
-- **Quantified pain** "15–30 min → under a minute" → Problem Value (25%)
-- **Landing + guided flow + this video** → Presentation (15%)
+## The cast (say the names, it sticks)
+| | Agent | Job | Model |
+|---|---|---|---|
+| Gwen | Intake Qualifier | reads the message | qwen3.5-flash |
+| Max | Quote Specialist | prices it with real tools | qwen3.7-max |
+| Ledger | Validator | re-checks every number | deterministic |
+| Sentry | Risk Router | flags what to look at | deterministic |
+| Quill | Confirmation Writer | writes the customer email | qwen3.5-flash |
 
-## If recording the live agent feels slow (~45s)
-Either (a) talk through the trace section of the landing page while it runs, or
-(b) click an already-**seeded** lead (Marcus Whitfield = high-risk, Lena Okafor =
-low-risk) to show a finished quote + trace instantly, then do one live run to prove
-it's real.
+## Talking points to hit (rubric coverage)
+- **Named multi-agent team** + **model routing** (max vs flash) → Technical Depth (30%)
+- **Deterministic Validator guardrail** between AI steps → production-readiness
+- **Risk-tiered human-in-the-loop** + first-person team readout → Innovation (30%)
+- **Quantified pain** "15–30 min to under a minute" → Problem Value (25%)
+- **Animated landing + guided flow + this video** → Presentation (15%)
+
+## If the live agent run feels slow (~45s)
+Either (a) talk through the team narrative while it runs, or (b) click an already-**seeded**
+lead (Marcus Whitfield = high-risk, Lena Okafor = low-risk) to show a finished quote, team
+readout, and trace instantly, then do one live run to prove it's real.
