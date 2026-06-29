@@ -42,7 +42,7 @@ SSH in (`ssh root@<public-ip>`), then:
 curl -fsSL https://get.docker.com | sh
 
 # 2. Get the code (after the repo is pushed to GitHub)
-git clone https://github.com/<your-username>/flowpilot.git
+git clone https://github.com/munadirkhan/flowpilot.git
 cd flowpilot/flowpilot          # repo root → project folder with the Dockerfile
 
 # 3. Build + run, passing the Qwen Cloud key as an env var (NOT baked into the image)
