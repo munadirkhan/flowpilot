@@ -3,6 +3,7 @@ import type { Lead } from "../lib/api";
 import { AgentTrace } from "./AgentTrace";
 import { QuoteCard } from "./QuoteCard";
 import { StatusPill } from "./StatusPill";
+import { TeamReadout } from "./TeamReadout";
 
 const CHANNEL_LABEL: Record<string, string> = {
   email: "Email",
@@ -64,8 +65,13 @@ export function ReviewScreen({
           </div>
           <div className="msgbox">“{lead.raw_message}”</div>
 
+          <div className="eyebrow" style={{ margin: "24px 0 12px" }}>
+            What the team found
+          </div>
+          <TeamReadout lead={lead} />
+
           <div className="eyebrow" style={{ margin: "24px 0 10px" }}>
-            Agent trace · {toolCalls} tool call{toolCalls === 1 ? "" : "s"}
+            Full agent trace · {toolCalls} tool call{toolCalls === 1 ? "" : "s"}
           </div>
           <AgentTrace trace={lead.agent_trace} />
         </div>

@@ -280,7 +280,15 @@ export function Landing() {
           </p>
           <div style={{ display: "flex", gap: 13, justifyContent: "center", flexWrap: "wrap" }}>
             <Link className="pill" to="/app">Launch demo</Link>
-            <a className="ghost" href="#agent" style={{ color: "#f4f2ec", borderColor: "#3a382f" }}>Watch the film</a>
+            <a
+              className="ghost"
+              href="https://github.com/munadirkhan/flowpilot"
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "#f4f2ec", borderColor: "#3a382f" }}
+            >
+              View the code →
+            </a>
           </div>
         </div>
       </div>

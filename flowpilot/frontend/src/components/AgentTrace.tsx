@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { TraceStep } from "../lib/api";
+import { personaFor } from "../lib/agents";
 
 const VERDICT_COLOR: Record<string, string> = {
   ok: "#5ec98a", pass: "#5ec98a", drafted: "#5ec98a", sent: "#5ec98a",
@@ -53,11 +54,30 @@ export function AgentTrace({ trace }: { trace: TraceStep[] }) {
       {steps.map((s, i) => {
         const isOpen = !!open[i];
         const vc = verdictColor(s.verdict);
+        const persona = personaFor(s.agent);
         return (
           <div key={i} className="tcall" onClick={() => setOpen((o) => ({ ...o, [i]: !o[i] }))}>
             <div className="tcl-head mono" style={{ flexWrap: "wrap", rowGap: 4 }}>
-              <span style={{ color: vc }}>●</span>
-              <span style={{ color: "#e7e2d6", fontWeight: 500 }}>{primaryLabel(s)}</span>
+              {s.agent ? (
+                <>
+                  <span
+                    style={{
+                      width: 16, height: 16, borderRadius: "50%", background: persona.color,
+                      color: "#fff", display: "inline-flex", alignItems: "center",
+                      justifyContent: "center", fontSize: 9, fontWeight: 700, flexShrink: 0,
+                    }}
+                  >
+                    {persona.initial}
+                  </span>
+                  <span style={{ color: "#e7e2d6", fontWeight: 600 }}>{persona.name}</span>
+                  <span style={{ color: "#8a8472", fontSize: 11 }}>{persona.role}</span>
+                </>
+              ) : (
+                <>
+                  <span style={{ color: vc }}>●</span>
+                  <span style={{ color: "#e7e2d6", fontWeight: 500 }}>{primaryLabel(s)}</span>
+                </>
+              )}
               {s.tool && (
                 <span style={{ color: "#a7b0f5" }}>· {s.tool}</span>
               )}
