@@ -39,12 +39,10 @@
   <text x="482" y="220" font-size="10.5" font-family="monospace" fill="#3a48d6">qwen3.7-max · Qwen Cloud</text>
 
   <!-- tools callout -->
-  <rect x="464" y="258" width="200" height="78" rx="12" fill="#fff" stroke="#e0dac9" stroke-dasharray="4 4"/>
-  <text x="482" y="280" font-size="10" letter-spacing="1.5" fill="#777163">REAL TOOLS</text>
-  <text x="482" y="299" font-size="11.5" font-family="monospace" fill="#16140d">get_pricing_book()</text>
-  <text x="482" y="315" font-size="11.5" font-family="monospace" fill="#16140d">check_calendar()</text>
-  <text x="482" y="331" font-size="11.5" font-family="monospace" fill="#16140d">save_quote()</text>
-  <line x1="564" y1="232" x2="564" y2="256" stroke="#cdd3f6" stroke-width="1.5"/>
+  <rect x="464" y="244" width="220" height="48" rx="12" fill="#fff" stroke="#e0dac9" stroke-dasharray="4 4"/>
+  <text x="482" y="264" font-size="10" letter-spacing="1.5" fill="#777163">REAL TOOLS</text>
+  <text x="482" y="282" font-size="11" font-family="monospace" fill="#16140d">get_pricing_book · check_calendar · save_quote</text>
+  <line x1="564" y1="232" x2="564" y2="242" stroke="#cdd3f6" stroke-width="1.5"/>
 
   <line x1="664" y1="182" x2="706" y2="182" stroke="#b3ab99" stroke-width="1.5" marker-end="url(#arr)"/>
 
@@ -95,9 +93,9 @@
   <rect x="234" y="410" width="862" height="70" rx="16" fill="#3a48d6"/>
   <text x="262" y="441" font-size="20">☁</text>
   <text x="292" y="438" font-size="17" font-weight="700" fill="#fff">Qwen Cloud</text>
-  <text x="292" y="458" font-size="11.5" fill="#cdd3f6">DashScope International · OpenAI-compatible endpoint · all LLM reasoning runs here</text>
-  <text x="700" y="436" font-size="11.5" font-family="monospace" fill="#fff">Max  →  qwen3.7-max   (reasoning + tools)</text>
-  <text x="700" y="456" font-size="11.5" font-family="monospace" fill="#aeb9ff">Gwen &amp; Quill  →  qwen3.5-flash   (extraction + drafting)</text>
+  <text x="292" y="458" font-size="11.5" fill="#cdd3f6">DashScope International · all LLM reasoning runs here</text>
+  <text x="712" y="436" font-size="11.5" font-family="monospace" fill="#fff">Max → qwen3.7-max  (reasoning + tools)</text>
+  <text x="712" y="456" font-size="11.5" font-family="monospace" fill="#aeb9ff">Gwen &amp; Quill → qwen3.5-flash  (drafting)</text>
   <!-- the three LLM agents call the cloud band -->
   <line x1="120" y1="445" x2="232" y2="445" stroke="#9aa3e8" stroke-width="1.5" stroke-dasharray="4 4"/>
   <text x="44" y="441" font-size="11" fill="#777163">three LLM</text>
@@ -105,10 +103,10 @@
 
   <!-- legend -->
   <rect x="40" y="512" width="14" height="14" rx="3" fill="#eef0fb" stroke="#cdd3f6"/>
-  <text x="62" y="524" font-size="12" fill="#544f43">Qwen LLM agent (Gwen, Max, Quill)</text>
-  <rect x="290" y="512" width="14" height="14" rx="3" fill="#fff" stroke="#e7e2d6"/>
-  <text x="312" y="524" font-size="12" fill="#544f43">Deterministic guardrail (Ledger, Sentry)</text>
-  <rect x="560" y="512" width="14" height="14" rx="3" fill="#fdf3e2" stroke="#f0d9a8"/>
-  <text x="582" y="524" font-size="12" fill="#544f43">Human-in-the-loop</text>
+  <text x="62" y="524" font-size="12" fill="#544f43">Qwen LLM agent</text>
+  <rect x="200" y="512" width="14" height="14" rx="3" fill="#fff" stroke="#e7e2d6"/>
+  <text x="222" y="524" font-size="12" fill="#544f43">Deterministic guardrail</text>
+  <rect x="420" y="512" width="14" height="14" rx="3" fill="#fdf3e2" stroke="#f0d9a8"/>
+  <text x="442" y="524" font-size="12" fill="#544f43">Human-in-the-loop</text>
   <text x="40" y="556" font-size="12" fill="#777163">Every step is recorded in a transparent agent trace (agent, model, duration, verdict).</text>
 </svg>

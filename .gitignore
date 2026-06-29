@@ -33,3 +33,4 @@ static/
 # private prep docs (keep local, not public)
 docs/DEVPOST.md
 docs/DEMO_SCRIPT.md
+docs/architecture.png
