@@ -29,3 +29,7 @@ static/
 
 # build cache
 *.tsbuildinfo
+
+# private prep docs (keep local, not public)
+docs/DEVPOST.md
+docs/DEMO_SCRIPT.md

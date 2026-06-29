@@ -97,7 +97,7 @@ flowpilot/
   frontend/  React and Vite SPA (landing page plus the 5-screen app flow)
   Dockerfile, docker-compose.yml   single-container build
   deploy/alibaba/DEPLOY.md         deployment runbook
-docs/        architecture diagram and Devpost copy
+docs/        architecture diagram
 ```
 
 ## Get a Qwen Cloud API key
