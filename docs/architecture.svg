@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 520" font-family="Inter, system-ui, sans-serif">
+  <rect width="1280" height="520" fill="#f4f2ec"/>
+
+  <!-- title -->
+  <text x="40" y="56" font-size="30" font-style="italic" font-family="Instrument Serif, Georgia, serif" fill="#16140d">FlowPilot</text>
+  <text x="180" y="56" font-size="16" fill="#777163">— multi-agent intake-to-quote pipeline</text>
+  <text x="40" y="82" font-size="12" letter-spacing="2" fill="#777163">AUTONOMOUS REASONING · REAL TOOLS · HUMAN SIGN-OFF · QWEN CLOUD</text>
+
+  <!-- defs -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#b3ab99"/>
+    </marker>
+  </defs>
+
+  <!-- inquiry -->
+  <rect x="40" y="140" width="150" height="92" rx="14" fill="#fff" stroke="#e7e2d6"/>
+  <text x="115" y="180" font-size="22" text-anchor="middle">✉</text>
+  <text x="115" y="208" font-size="13" font-weight="600" text-anchor="middle" fill="#16140d">Inquiry</text>
+  <line x1="190" y1="186" x2="232" y2="186" stroke="#b3ab99" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 1 Intake Qualifier (LLM) -->
+  <rect x="234" y="140" width="186" height="92" rx="14" fill="#eef0fb" stroke="#cdd3f6"/>
+  <text x="252" y="166" font-size="11" letter-spacing="1.5" fill="#3a48d6">AGENT · STEP 1</text>
+  <text x="252" y="190" font-size="15" font-weight="600" fill="#16140d">Intake Qualifier</text>
+  <text x="252" y="212" font-size="12" fill="#544f43">extract intent · urgency · gaps</text>
+  <text x="252" y="226" font-size="11" font-family="monospace" fill="#3a48d6">qwen3.5-flash</text>
+  <line x1="420" y1="186" x2="462" y2="186" stroke="#b3ab99" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 2 Quote Specialist (LLM + tools) -->
+  <rect x="464" y="140" width="200" height="92" rx="14" fill="#eef0fb" stroke="#cdd3f6"/>
+  <text x="482" y="166" font-size="11" letter-spacing="1.5" fill="#3a48d6">AGENT · STEP 2</text>
+  <text x="482" y="190" font-size="15" font-weight="600" fill="#16140d">Quote Specialist</text>
+  <text x="482" y="212" font-size="12" fill="#544f43">tool-calling loop → quote</text>
+  <text x="482" y="226" font-size="11" font-family="monospace" fill="#3a48d6">qwen3.7-max</text>
+
+  <!-- tools callout -->
+  <rect x="464" y="262" width="200" height="78" rx="12" fill="#fff" stroke="#e0dac9" stroke-dasharray="4 4"/>
+  <text x="482" y="284" font-size="10" letter-spacing="1.5" fill="#777163">TOOLS</text>
+  <text x="482" y="303" font-size="11.5" font-family="monospace" fill="#16140d">get_pricing_book()</text>
+  <text x="482" y="319" font-size="11.5" font-family="monospace" fill="#16140d">check_calendar()</text>
+  <text x="482" y="335" font-size="11.5" font-family="monospace" fill="#16140d">save_quote()</text>
+  <line x1="564" y1="232" x2="564" y2="260" stroke="#cdd3f6" stroke-width="1.5"/>
+
+  <line x1="664" y1="186" x2="706" y2="186" stroke="#b3ab99" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 3 Validator (deterministic) -->
+  <rect x="708" y="140" width="172" height="92" rx="14" fill="#fff" stroke="#e7e2d6"/>
+  <text x="726" y="166" font-size="11" letter-spacing="1.5" fill="#777163">GUARDRAIL · STEP 3</text>
+  <text x="726" y="190" font-size="15" font-weight="600" fill="#16140d">Validator</text>
+  <text x="726" y="212" font-size="12" fill="#544f43">recompute every total</text>
+  <text x="726" y="226" font-size="11" font-family="monospace" fill="#777163">deterministic</text>
+  <line x1="880" y1="186" x2="922" y2="186" stroke="#b3ab99" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 4 Risk Router (deterministic) -->
+  <rect x="924" y="140" width="172" height="92" rx="14" fill="#fff" stroke="#e7e2d6"/>
+  <text x="942" y="166" font-size="11" letter-spacing="1.5" fill="#777163">GUARDRAIL · STEP 4</text>
+  <text x="942" y="190" font-size="15" font-weight="600" fill="#16140d">Risk Router</text>
+  <text x="942" y="212" font-size="12" fill="#544f43">tier low / high risk</text>
+  <text x="942" y="226" font-size="11" font-family="monospace" fill="#777163">deterministic</text>
+
+  <!-- down to human gate -->
+  <line x1="1010" y1="232" x2="1010" y2="300" stroke="#b3ab99" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- HUMAN GATE -->
+  <rect x="708" y="304" width="388" height="74" rx="14" fill="#fdf3e2" stroke="#f0d9a8"/>
+  <text x="902" y="332" font-size="20" text-anchor="middle">👤</text>
+  <text x="902" y="356" font-size="14" font-weight="700" text-anchor="middle" fill="#b45309">HUMAN GATE — pending_approval</text>
+  <text x="902" y="372" font-size="11.5" text-anchor="middle" fill="#7a5a18">dispatcher approves / edits / rejects — nothing sent without sign-off</text>
+
+  <line x1="708" y1="341" x2="666" y2="341" stroke="#b3ab99" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 5 Confirmation Writer -->
+  <rect x="464" y="304" width="200" height="74" rx="14" fill="#eef0fb" stroke="#cdd3f6"/>
+  <text x="482" y="328" font-size="11" letter-spacing="1.5" fill="#3a48d6">AGENT · STEP 5</text>
+  <text x="482" y="350" font-size="15" font-weight="600" fill="#16140d">Confirmation Writer</text>
+  <text x="482" y="368" font-size="11" font-family="monospace" fill="#3a48d6">qwen3.5-flash</text>
+  <line x1="464" y1="341" x2="422" y2="341" stroke="#b3ab99" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- confirmed -->
+  <rect x="234" y="304" width="186" height="74" rx="14" fill="#e7f6ee" stroke="#bfe6cf"/>
+  <text x="327" y="338" font-size="20" text-anchor="middle">✓</text>
+  <text x="327" y="360" font-size="14" font-weight="700" text-anchor="middle" fill="#0f7a45">Customer confirmed</text>
+
+  <!-- legend -->
+  <rect x="40" y="430" width="14" height="14" rx="3" fill="#eef0fb" stroke="#cdd3f6"/>
+  <text x="62" y="442" font-size="12" fill="#544f43">Qwen LLM agent</text>
+  <rect x="190" y="430" width="14" height="14" rx="3" fill="#fff" stroke="#e7e2d6"/>
+  <text x="212" y="442" font-size="12" fill="#544f43">Deterministic guardrail</text>
+  <rect x="380" y="430" width="14" height="14" rx="3" fill="#fdf3e2" stroke="#f0d9a8"/>
+  <text x="402" y="442" font-size="12" fill="#544f43">Human-in-the-loop</text>
+  <text x="40" y="476" font-size="12" fill="#777163">Every step is recorded in a transparent agent trace (agent · model · duration · verdict).</text>
+</svg>

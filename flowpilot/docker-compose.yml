@@ -1,0 +1,15 @@
+# FlowPilot — one service: API + bundled frontend on port 8000.
+# Usage on the server:  QWEN_API_KEY=sk-... docker compose up -d --build
+services:
+  flowpilot:
+    build: .
+    image: flowpilot:latest
+    ports:
+      - "80:8000"          # serve on HTTP :80 so judges hit http://<server-ip>
+    environment:
+      - QWEN_API_KEY=${QWEN_API_KEY}
+      - QWEN_BASE_URL=https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+      - QWEN_AGENT_MODEL=qwen3.7-max
+      - QWEN_DRAFT_MODEL=qwen3.5-flash
+      - CORS_ORIGINS=*
+    restart: unless-stopped
