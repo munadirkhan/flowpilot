@@ -20,17 +20,28 @@ Home-service businesses (HVAC, plumbing, cleaning) lose jobs to slow quotes. Pri
 
 ```
 inquiry
-  1. Intake Qualifier    (qwen3.5-flash) → structured profile: intent, urgency, missing info
-  2. Quote Specialist    (qwen3.7-max)   → autonomous tool-calling loop builds the quote
-  3. Validator           (deterministic) → recomputes every total; the LLM can't ship bad math
-  4. Risk Router         (deterministic) → tiers the quote low / high risk
+  1. Gwen   · Intake Qualifier    (qwen3.5-flash) → structured profile: intent, urgency, missing info
+  2. Max    · Quote Specialist    (qwen3.7-max)   → autonomous tool-calling loop builds the quote
+  3. Ledger · Validator           (deterministic) → recomputes every total; the LLM can't ship bad math
+  4. Sentry · Risk Router         (deterministic) → tiers the quote low / high risk
   ─────────────── pending_approval · HUMAN GATE ───────────────
      dispatcher approves / edits / rejects (nothing reaches the customer first)
-  5. Confirmation Writer (qwen3.5-flash) → writes + sends the customer email
+  5. Quill  · Confirmation Writer (qwen3.5-flash) → writes + sends the customer email
 confirmed ✅
 ```
 
 Three specialized LLM roles (each its own prompt + job), two deterministic guardrails, and one human checkpoint. Work is split so each call is simpler and more reliable, a cheap model handles the easy jobs while the strong model does the tool-using reasoning, and **non-AI safety checks sit between the AI steps** — the Validator catches arithmetic drift before it ever reaches a customer.
+
+### Meet the team
+The pipeline is presented as a named crew so the dispatcher can follow exactly who did what. On the approval screen, each agent **briefs you in first person about that specific client's quote** ("*I re-added every line by hand — the math is exact at $1,580.59*"), and the live trace + working screen show each agent with its own avatar.
+
+| | Agent | Job |
+|---|---|---|
+| 📥 **Gwen** | Intake Qualifier | Reads the messy message, pulls out the job, system & urgency |
+| 🛠️ **Max** | Quote Specialist | Calls the pricing book + calendar, builds the itemized quote |
+| 🧮 **Ledger** | Validator | Re-checks every number — deterministic, no LLM math |
+| 🛡️ **Sentry** | Risk Router | Tiers the quote low/high and says *why* |
+| ✍️ **Quill** | Confirmation Writer | Writes the customer's confirmation once you approve |
 
 ### Why this maps to Track 4
 | Rubric criterion | How FlowPilot delivers |
@@ -44,7 +55,7 @@ Three specialized LLM roles (each its own prompt + job), two deterministic guard
 
 ## Tech stack
 - **Backend:** Python · FastAPI · SQLModel/SQLite · OpenAI SDK → Qwen Cloud (DashScope intl)
-- **Frontend:** React · Vite · TypeScript (light-editorial design, animated agent trace, risk banners)
+- **Frontend:** React · Vite · TypeScript (light-editorial design, named agent team + first-person "team readout", animated agent trace, risk banners)
 - **Models:** `qwen3.7-max` (reasoning/tools), `qwen3.5-flash` (extraction + drafting)
 - **Deploy:** single Docker container (API serves the built SPA) on Alibaba Cloud ECS
 
