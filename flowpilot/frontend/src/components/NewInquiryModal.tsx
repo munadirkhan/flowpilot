@@ -133,7 +133,7 @@ export function NewInquiryModal({
       case "playing":
         return <span className="muted">Playing the customer's call…</span>;
       case "recording":
-        return <span style={{ color: "#e11d48", fontWeight: 600 }}>● Recording — click Stop when done</span>;
+        return <span style={{ color: "var(--rose)", fontWeight: 600 }}>● Recording — click Stop when done</span>;
       case "transcribing":
         return <span className="indigo" style={{ fontWeight: 500 }}>Transcribing with qwen3-asr-flash…</span>;
       case "done":
@@ -167,8 +167,8 @@ export function NewInquiryModal({
             <span className="flab">Voice intake · AI receptionist (simulated)</span>
             <div
               style={{
-                border: "1px solid #cdd3f6",
-                background: "#eef0fb",
+                border: "1px solid var(--indigo-line)",
+                background: "var(--indigo-soft)",
                 borderRadius: 14,
                 padding: "13px 15px",
                 display: "flex",
@@ -179,7 +179,7 @@ export function NewInquiryModal({
               <div style={{ display: "flex", gap: 9, flexWrap: "wrap" }}>
                 <button
                   className="chipx"
-                  style={{ background: "#fff" }}
+                  style={{ background: "var(--card)" }}
                   onClick={playVoicemail}
                   disabled={voice.kind === "playing" || transcribing}
                 >
@@ -189,8 +189,8 @@ export function NewInquiryModal({
                   className="chipx"
                   style={
                     voice.kind === "recording"
-                      ? { background: "#e11d48", color: "#fff", borderColor: "#e11d48" }
-                      : { background: "#fff" }
+                      ? { background: "var(--rose)", color: "#fff", borderColor: "var(--rose)" }
+                      : { background: "var(--card)" }
                   }
                   onClick={toggleMic}
                   disabled={voice.kind === "playing" || transcribing}

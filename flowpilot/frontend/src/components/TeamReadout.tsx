@@ -85,7 +85,7 @@ export function TeamReadout({ lead }: { lead: Lead }) {
             <AgentAvatar persona={p} />
             <div
               style={{
-                background: "#fff", border: "1px solid #e7e2d6", borderRadius: 14,
+                background: "var(--card)", border: "1px solid var(--line)", borderRadius: 14,
                 borderTopLeftRadius: 4, padding: "10px 14px", flex: 1,
                 boxShadow: "0 1px 2px rgba(22,20,13,.03)",
               }}
@@ -94,7 +94,7 @@ export function TeamReadout({ lead }: { lead: Lead }) {
                 <span style={{ fontWeight: 600, fontSize: 13, color: p.color }}>{p.name}</span>
                 <span className="muted" style={{ fontSize: 11 }}>{p.role}</span>
               </div>
-              <div style={{ fontSize: 13.5, lineHeight: 1.5, color: "#2c281f" }}>{m.text}</div>
+              <div style={{ fontSize: 13.5, lineHeight: 1.5, color: "var(--ink-2)" }}>{m.text}</div>
             </div>
           </div>
         );

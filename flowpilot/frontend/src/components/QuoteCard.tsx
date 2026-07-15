@@ -2,10 +2,10 @@ import type { Quote } from "../lib/api";
 import { money } from "../lib/format";
 
 function confClass(c?: number) {
-  if (c == null) return { pill: "s-rec", dot: "#3a48d6" };
-  if (c >= 0.8) return { pill: "s-conf", dot: "#0f9d58" };
-  if (c >= 0.55) return { pill: "s-need", dot: "#b45309" };
-  return { pill: "s-rej", dot: "#e11d48" };
+  if (c == null) return { pill: "s-rec", dot: "var(--indigo)" };
+  if (c >= 0.8) return { pill: "s-conf", dot: "var(--emerald)" };
+  if (c >= 0.55) return { pill: "s-need", dot: "var(--amber)" };
+  return { pill: "s-rej", dot: "var(--rose)" };
 }
 
 export function QuoteCard({ quote }: { quote: Quote }) {
@@ -65,7 +65,7 @@ export function QuoteCard({ quote }: { quote: Quote }) {
           alignItems: "flex-end",
           justifyContent: "space-between",
           marginTop: 14,
-          borderTop: "1px solid #e7e2d6",
+          borderTop: "1px solid var(--line)",
           paddingTop: 14,
         }}
       >
@@ -82,7 +82,7 @@ export function QuoteCard({ quote }: { quote: Quote }) {
               gap: 8,
               fontSize: 12,
               fontWeight: 600,
-              color: "#b45309",
+              color: "var(--amber)",
               textTransform: "uppercase",
               letterSpacing: ".1em",
               marginBottom: 8,

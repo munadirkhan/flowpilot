@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // Floats gently, reveals each row in sequence, and counts the total up to $4,746
 // on a ~9.2s loop. Pure requestAnimationFrame; the buttons launch the demo.
 
-const ACCENT = "#3a48d6";
+const ACCENT = "var(--indigo)";
 const TARGET = 4746;
 const SPEED = 1.1;
 const LOOP = 9.2;
@@ -43,13 +43,13 @@ export function HeroQuoteCard() {
   const total = "$" + (TARGET * cp).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const float = (Math.sin(t * 0.7) * 3).toFixed(2);
 
-  const dotGreen = { width: 8, height: 8, borderRadius: "50%", background: "#0f9d58", display: "inline-block", flex: "none" } as const;
+  const dotGreen = { width: 8, height: 8, borderRadius: "50%", background: "var(--emerald)", display: "inline-block", flex: "none" } as const;
 
   return (
     <div
       style={{
-        background: "#fff",
-        border: "1px solid rgba(22,20,13,.06)",
+        background: "var(--card)",
+        border: "1px solid var(--line)",
         borderRadius: 18,
         padding: "26px 30px 28px",
         boxShadow: "0 30px 70px -28px rgba(22,20,13,.28), 0 6px 18px -10px rgba(22,20,13,.12)",
@@ -61,7 +61,7 @@ export function HeroQuoteCard() {
       <div
         style={{
           display: "inline-flex", alignItems: "center", gap: 8,
-          background: "rgba(15,157,88,.09)", color: "#0f9d58", fontSize: 13, fontWeight: 600,
+          background: "rgba(15,157,88,.09)", color: "var(--emerald)", fontSize: 13, fontWeight: 600,
           padding: "6px 12px 6px 11px", borderRadius: 999, marginBottom: 20, ...appear(0.4, 0.6, 8),
         }}
       >
@@ -72,15 +72,15 @@ export function HeroQuoteCard() {
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6, ...appear(0.75, 0.55) }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ width: 10, height: 10, borderRadius: 2, background: ACCENT, display: "inline-block" }} />
-          <span style={{ fontWeight: 600, color: "#16140d", fontSize: 15 }}>Draft quote</span>
+          <span style={{ fontWeight: 600, color: "var(--ink)", fontSize: 15 }}>Draft quote</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span style={dotGreen} />
-          <span style={{ color: "#0f9d58", fontWeight: 600, fontSize: 13 }}>85% confidence</span>
+          <span style={{ color: "var(--emerald)", fontWeight: 600, fontSize: 13 }}>85% confidence</span>
         </div>
       </div>
 
-      <p style={{ fontSize: 13.5, color: "#9a9081", margin: "0 0 20px", ...appear(1.0, 0.55) }}>
+      <p style={{ fontSize: 13.5, color: "var(--muted)", margin: "0 0 20px", ...appear(1.0, 0.55) }}>
         Whitfield residence · AC blower fault · Maple Grove
       </p>
 
@@ -91,19 +91,19 @@ export function HeroQuoteCard() {
             key={label}
             style={{
               display: "flex", alignItems: "center", justifyContent: "space-between",
-              padding: "11px 0", borderBottom: "1px solid rgba(22,20,13,.05)", ...appear(1.5 + i * 0.42, 0.6, 14),
+              padding: "11px 0", borderBottom: "1px solid var(--line)", ...appear(1.5 + i * 0.42, 0.6, 14),
             }}
           >
-            <span style={{ color: "#16140d", fontSize: 15 }}>{label}</span>
-            <span style={{ color: "#16140d", fontWeight: 600, fontSize: 15, whiteSpace: "nowrap" }}>{price}</span>
+            <span style={{ color: "var(--ink)", fontSize: 15 }}>{label}</span>
+            <span style={{ color: "var(--ink)", fontWeight: 600, fontSize: 15, whiteSpace: "nowrap" }}>{price}</span>
           </div>
         ))}
       </div>
 
       {/* total */}
       <div style={{ display: "flex", justifyContent: "space-between", marginTop: 22, ...appear(1.7, 0.55) }}>
-        <span style={{ color: "#9a9081", fontSize: 13, marginTop: "auto", paddingBottom: 8 }}>Estimated total</span>
-        <span className="serif" style={{ color: "#0f9d58", fontSize: 60, lineHeight: 0.9, letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>
+        <span style={{ color: "var(--muted)", fontSize: 13, marginTop: "auto", paddingBottom: 8 }}>Estimated total</span>
+        <span className="serif" style={{ color: "var(--emerald)", fontSize: 60, lineHeight: 0.9, letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>
           {total}
         </span>
       </div>
@@ -111,7 +111,7 @@ export function HeroQuoteCard() {
       {/* tools used */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 8, marginTop: 8, ...appear(4.5, 0.6) }}>
         <span style={{ color: ACCENT, fontSize: 9, lineHeight: 1 }}>◆</span>
-        <span style={{ color: "#9a9081", fontSize: 12 }}>5 tools used</span>
+        <span style={{ color: "var(--muted)", fontSize: 12 }}>5 tools used</span>
       </div>
 
       {/* actions */}

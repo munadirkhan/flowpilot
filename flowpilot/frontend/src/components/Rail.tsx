@@ -1,3 +1,5 @@
+import { ThemeToggle } from "./ThemeToggle";
+
 const NAV = [
   { ic: "▤", label: "Inbox", on: true },
   { ic: "◆", label: "Quotes", soon: true },
@@ -14,8 +16,8 @@ function SoonPill() {
         fontSize: 9,
         letterSpacing: ".08em",
         textTransform: "uppercase",
-        color: "#9a937f",
-        border: "1px solid #e7e2d6",
+        color: "var(--muted)",
+        border: "1px solid var(--line)",
         borderRadius: 999,
         padding: "1px 7px",
         fontWeight: 600,
@@ -42,8 +44,8 @@ export function Rail({ awaiting }: { awaiting: number }) {
               style={{
                 marginLeft: "auto",
                 fontSize: 12,
-                background: "#f4f2ec",
-                color: "#16140d",
+                background: "var(--paper)",
+                color: "var(--ink)",
                 borderRadius: 999,
                 padding: "1px 8px",
                 fontWeight: 600,
@@ -61,6 +63,7 @@ export function Rail({ awaiting }: { awaiting: number }) {
           <div style={{ fontSize: 13.5, fontWeight: 600 }}>Dana Reyes</div>
           <div className="muted" style={{ fontSize: 12 }}>Northwind H&amp;C</div>
         </div>
+        <ThemeToggle style={{ marginLeft: "auto" }} />
       </div>
     </div>
   );

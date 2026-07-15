@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import type { Lead } from "../lib/api";
 import { humanizeEmail } from "../lib/format";
 
-const PALETTE = ["#3a48d6", "#0f9d58", "#b45309", "#e11d48", "#7a85ec"];
+const PALETTE = ["var(--indigo)", "var(--emerald)", "var(--amber)", "var(--rose)", "var(--indigo-2)"];
 
 export function ConfirmScreen({ lead, onBack }: { lead: Lead; onBack: () => void }) {
   const conf = lead.confirmation ?? {};
@@ -44,7 +44,7 @@ export function ConfirmScreen({ lead, onBack }: { lead: Lead; onBack: () => void
 
         <div className="email">
           <div className="emh">
-            <div style={{ fontSize: 12, color: "#9a937f", marginBottom: 4 }}>
+            <div style={{ fontSize: 12, color: "var(--muted)", marginBottom: 4 }}>
               To: {lead.sender || conf.to || name} · From: Northwind Heating &amp; Cooling
             </div>
             <div style={{ fontWeight: 600, fontSize: 15 }}>

@@ -86,8 +86,8 @@ export function ReviewScreen({
                 padding: "13px 16px",
                 marginBottom: 18,
                 borderRadius: 14,
-                border: `1px solid ${lead.risk.label === "high" ? "#f0c6cf" : "#bfe6cf"}`,
-                background: lead.risk.label === "high" ? "#fdecef" : "#eaf7f0",
+                border: `1px solid ${lead.risk.label === "high" ? "var(--rose-line)" : "var(--emerald-line)"}`,
+                background: lead.risk.label === "high" ? "var(--rose-soft)" : "var(--emerald-soft)",
               }}
             >
               <span style={{ fontSize: 16, lineHeight: 1.3 }}>
@@ -98,7 +98,7 @@ export function ReviewScreen({
                   style={{
                     fontWeight: 600,
                     fontSize: 13,
-                    color: lead.risk.label === "high" ? "#c01f3c" : "#0f7a45",
+                    color: lead.risk.label === "high" ? "var(--rose-deep)" : "var(--emerald-deep)",
                   }}
                 >
                   {lead.risk.label === "high" ? "High-risk quote — review carefully" : "Low-risk quote — safe to fast-approve"}
@@ -137,7 +137,7 @@ export function ReviewScreen({
                   </button>
                   <button
                     className="ghost"
-                    style={{ color: "#e11d48", borderColor: "#f0c6cf" }}
+                    style={{ color: "var(--rose)", borderColor: "var(--rose-line)" }}
                     disabled={busy}
                     onClick={() => onReject(notes)}
                   >

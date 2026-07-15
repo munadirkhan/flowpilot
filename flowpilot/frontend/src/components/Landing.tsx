@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { HeroQuoteCard } from "./HeroQuoteCard";
+import { ThemeToggle } from "./ThemeToggle";
 import "../landing.css";
 
 export function Landing() {
@@ -54,7 +55,10 @@ export function Landing() {
             <a href="#agent">The agent</a>
             <a href="#cta">Demo</a>
           </div>
-          <Link className="pill" to="/app">Launch demo</Link>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <ThemeToggle />
+            <Link className="pill" to="/app">Launch demo</Link>
+          </div>
         </div>
       </div>
 
@@ -162,10 +166,10 @@ export function Landing() {
           <div className="reveal d2">
             <div className="trace">
               <div className="thead">
-                <span className="tdotr" style={{ background: "#e11d48" }} />
-                <span className="tdotr" style={{ background: "#b45309" }} />
-                <span className="tdotr" style={{ background: "#0f9d58" }} />
-                <span className="mono" style={{ color: "#8a8472", fontSize: 12, marginLeft: 8 }}>flowpilot · agent run #4817</span>
+                <span className="tdotr" style={{ background: "var(--rose)" }} />
+                <span className="tdotr" style={{ background: "var(--amber)" }} />
+                <span className="tdotr" style={{ background: "var(--emerald)" }} />
+                <span className="mono" style={{ color: "#8a8472", fontSize: 12, marginLeft: 8 }}>relay · agent run #4817</span>
               </div>
               <div className="tbody mono">
                 <div className="trow">
@@ -206,13 +210,13 @@ export function Landing() {
           </div>
           <p className="lede">
             Reasoning runs on Qwen. But the agent never acts alone —{" "}
-            <span style={{ color: "#16140d", fontWeight: 600 }}>a human approves every quote before a customer ever sees it.</span>{" "}
+            <span style={{ color: "var(--ink)", fontWeight: 600 }}>a human approves every quote before a customer ever sees it.</span>{" "}
             Autonomous where it's safe, supervised where it counts.
           </p>
         </div>
         <div
           className="reveal d2"
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "#e7e2d6", border: "1px solid #e7e2d6", borderRadius: 18, overflow: "hidden" }}
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--line)", border: "1px solid var(--line)", borderRadius: 18, overflow: "hidden" }}
         >
           {[
             ["100", "%", "", "Human-approved before send"],
@@ -220,7 +224,7 @@ export function Landing() {
             ["5", "", "emerald", "Real tools per run"],
             ["0", "", "", "Quotes sent without you"],
           ].map(([n, unit, color, label], i) => (
-            <div key={i} style={{ background: "#f4f2ec", padding: "28px 24px" }}>
+            <div key={i} style={{ background: "var(--paper)", padding: "28px 24px" }}>
               <div className={`serif ${color}`} style={{ fontSize: 44, lineHeight: 1 }}>
                 {n}{unit && <span className="muted" style={{ fontSize: ".4em" }}>{unit}</span>}
               </div>
@@ -233,11 +237,11 @@ export function Landing() {
       {/* CTA */}
       <div className="cont" id="cta">
         <div className="cta reveal">
-          <span className="eyebrow" style={{ color: "#b8b2a0" }}>Track · autonomous agents</span>
+          <span className="eyebrow" style={{ color: "var(--on-ink-muted)" }}>Track · autonomous agents</span>
           <h2 className="serif" style={{ fontSize: "clamp(40px,6.5vw,80px)", lineHeight: 1.02, margin: "16px 0 14px", letterSpacing: "-.02em" }}>
-            Put your front desk <span className="ital" style={{ color: "#a7b0f5" }}>on autopilot.</span>
+            Put your front desk <span className="ital" style={{ color: "var(--on-ink-accent)" }}>on autopilot.</span>
           </h2>
-          <p style={{ color: "#cfc9ba", maxWidth: 500, margin: "0 auto 30px", fontSize: 18, lineHeight: 1.55 }}>
+          <p style={{ color: "var(--on-ink-muted)", maxWidth: 500, margin: "0 auto 30px", fontSize: 18, lineHeight: 1.55 }}>
             Watch Relay draft a real quote from a live inquiry — start to approved in under a minute.
           </p>
           <div style={{ display: "flex", gap: 13, justifyContent: "center", flexWrap: "wrap" }}>
@@ -247,7 +251,7 @@ export function Landing() {
               href="https://github.com/munadirkhan/flowpilot"
               target="_blank"
               rel="noreferrer"
-              style={{ color: "#f4f2ec", borderColor: "#3a382f" }}
+              style={{ color: "var(--paper)", borderColor: "var(--on-ink-line)" }}
             >
               View the code →
             </a>

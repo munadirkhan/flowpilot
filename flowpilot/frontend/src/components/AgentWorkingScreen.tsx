@@ -61,10 +61,10 @@ export function AgentWorkingScreen({
                   className={`amark ${isActive ? "mk-active" : ""}`}
                   style={
                     isDone
-                      ? { background: "#e7f6ee", color: "#0f9d58" }
+                      ? { background: "var(--emerald-soft)", color: "var(--emerald)" }
                       : isActive
                       ? { background: p.color, color: "#fff" }
-                      : { background: "#f1ecdf", color: "#b3ac9a" }
+                      : { background: "var(--chip)", color: "var(--faint)" }
                   }
                 >
                   {isDone ? "✓" : p.initial}
