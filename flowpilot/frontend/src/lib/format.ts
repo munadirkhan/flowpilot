@@ -17,7 +17,7 @@ export const timeAgo = (iso: string) => {
   return `${Math.floor(s / 86400)}d ago`;
 };
 
-/** Status → design pill class + label + dot color (matches FlowPilot App.dc.html). */
+/** Status → design pill class + label + dot color (matches Relay App.dc.html). */
 export const STATUS_META: Record<
   LeadStatus,
   { label: string; pill: string; dot: string; pulse?: boolean }

@@ -1,4 +1,4 @@
-"""FlowPilot API — autonomous HVAC intake-to-quote agent with human-in-the-loop."""
+"""Relay API — autonomous HVAC intake-to-quote agent with human-in-the-loop."""
 from contextlib import asynccontextmanager
 
 from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException
@@ -19,7 +19,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="FlowPilot", version="0.1.0",
+app = FastAPI(title="Relay", version="0.1.0",
               description="Autonomous HVAC intake-to-quote agent with human-in-the-loop.",
               lifespan=lifespan)
 

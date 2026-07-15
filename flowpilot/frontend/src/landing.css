@@ -1,4 +1,4 @@
-/* FlowPilot Landing — ported 1:1 from FlowPilot Landing.dc.html, scoped under .lp
+/* Relay Landing — ported 1:1 from Relay Landing.dc.html, scoped under .lp
    so its class definitions never collide with the app's global classes.
    Shared helpers (.serif .mono .ital .indigo .emerald .rose .muted .eyebrow .grain) reuse index.css. */
 html{scroll-behavior:smooth}

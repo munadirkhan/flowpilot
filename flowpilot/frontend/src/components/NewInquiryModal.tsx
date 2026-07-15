@@ -83,7 +83,7 @@ export function NewInquiryModal({
               ref={taRef}
               value={text}
               onChange={(e) => setText(e.target.value)}
-              placeholder="Paste exactly what the customer wrote — typos and all. FlowPilot handles the mess."
+              placeholder="Paste exactly what the customer wrote — typos and all. Relay handles the mess."
             />
           </div>
           <div className="fld">
@@ -111,7 +111,7 @@ export function NewInquiryModal({
             onClick={submit}
             disabled={busy || !text.trim()}
           >
-            {busy ? "Submitting…" : "Submit to FlowPilot →"}
+            {busy ? "Submitting…" : "Submit to Relay →"}
           </button>
         </div>
       </div>

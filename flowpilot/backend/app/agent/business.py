@@ -1,4 +1,4 @@
-"""FlowPilot's 'company knowledge' — the HVAC pricing book and calendar.
+"""Relay's 'company knowledge' — the HVAC pricing book and calendar.
 
 In production these would be a database / Google Calendar / CRM. For the demo
 they're deterministic functions so quotes are reproducible and defensible.

@@ -66,7 +66,7 @@ def trace(summary, urgency, q, model="qwen3.7-max"):
          "verdict": f"{r['label']}_risk", "duration_ms": 0,
          "content": "High-risk — recommend careful review." if r["label"] == "high"
                     else "Low-risk — safe to fast-approve.", "result": r},
-        {"agent": "FlowPilot", "model": "—", "type": "handoff", "verdict": "ready",
+        {"agent": "Relay", "model": "—", "type": "handoff", "verdict": "ready",
          "duration_ms": 0, "content": "Draft routed to a human for approval."},
     ]
     for i, s in enumerate(steps):

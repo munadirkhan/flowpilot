@@ -1,4 +1,4 @@
-"""Database models and API schemas for FlowPilot."""
+"""Database models and API schemas for Relay."""
 from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Optional

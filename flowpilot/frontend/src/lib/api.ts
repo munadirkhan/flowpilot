@@ -1,4 +1,4 @@
-// API client + types for the FlowPilot backend.
+// API client + types for the Relay backend.
 // In dev, Vite proxies /api -> http://localhost:8000 (see vite.config.ts).
 const BASE = import.meta.env.VITE_API_BASE ?? "/api";
 

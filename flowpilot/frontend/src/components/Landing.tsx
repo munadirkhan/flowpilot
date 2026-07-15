@@ -46,8 +46,8 @@ export function Landing() {
       <div className="nav">
         <div className="cont navrow">
           <div className="logo">
-            <span className="dot" />Flow
-            <span className="serif ital indigo" style={{ fontSize: 23 }}>Pilot</span>
+            <span className="dot" />Re
+            <span className="serif ital indigo" style={{ fontSize: 23 }}>lay</span>
           </div>
           <div className="navlinks">
             <a href="#how">How it works</a>
@@ -69,7 +69,7 @@ export function Landing() {
             <span className="ital indigo">on autopilot.</span>
           </h1>
           <p className="lede reveal d2" style={{ marginTop: 26 }}>
-            FlowPilot turns chaotic customer inquiries into approved quotes in 30 seconds —
+            Relay turns chaotic customer inquiries into approved quotes in 30 seconds —
             autonomous reasoning, real tools, human sign-off.
           </p>
           <div className="reveal d3" style={{ display: "flex", gap: 13, marginTop: 32, flexWrap: "wrap" }}>
@@ -127,7 +127,7 @@ export function Landing() {
         <div className="flow reveal d2">
           <div className="flowline" />
           {[
-            ["✉", "STEP 01", "Inquiry arrives", "A text, email or voicemail lands. FlowPilot reads it instantly."],
+            ["✉", "STEP 01", "Inquiry arrives", "A text, email or voicemail lands. Relay reads it instantly."],
             ["◆", "STEP 02", "Agent qualifies & prices", "It reasons through the job and builds itemized pricing from your book."],
             ["✓", "STEP 03", "You approve", "The draft hits your queue. Send, edit, or reject in one tap."],
             ["★", "STEP 04", "Customer confirmed", "The quote goes out, books a slot, and the lead is won."],
@@ -155,7 +155,7 @@ export function Landing() {
               No black box.<br /><span className="ital indigo">Every move, in the open.</span>
             </h2>
             <p className="lede" style={{ marginTop: 20 }}>
-              FlowPilot doesn't just spit out an answer. It reasons step by step and calls real tools —
+              Relay doesn't just spit out an answer. It reasons step by step and calls real tools —
               your pricing book, your calendar — then shows its work. You see exactly how it reached the number.
             </p>
           </div>
@@ -238,7 +238,7 @@ export function Landing() {
             Put your front desk <span className="ital" style={{ color: "#a7b0f5" }}>on autopilot.</span>
           </h2>
           <p style={{ color: "#cfc9ba", maxWidth: 500, margin: "0 auto 30px", fontSize: 18, lineHeight: 1.55 }}>
-            Watch FlowPilot draft a real quote from a live inquiry — start to approved in under a minute.
+            Watch Relay draft a real quote from a live inquiry — start to approved in under a minute.
           </p>
           <div style={{ display: "flex", gap: 13, justifyContent: "center", flexWrap: "wrap" }}>
             <Link className="pill" to="/app">Launch demo</Link>
@@ -259,9 +259,9 @@ export function Landing() {
       <div className="cont">
         <div className="footer">
           <div className="logo">
-            <span className="dot" />Flow<span className="serif ital indigo" style={{ fontSize: 21 }}>Pilot</span>
+            <span className="dot" />Re<span className="serif ital indigo" style={{ fontSize: 21 }}>lay</span>
           </div>
-          <span className="muted" style={{ fontSize: 13 }}>© 2026 FlowPilot · Built on Qwen · Autonomous Agents track</span>
+          <span className="muted" style={{ fontSize: 13 }}>© 2026 Relay · Built on Qwen · Autonomous Agents track</span>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-"""FlowPilot multi-agent pipeline coordinator.
+"""Relay multi-agent pipeline coordinator.
 
     inquiry
       → Agent 1: Intake Qualifier   (LLM, structured extraction)
@@ -48,7 +48,7 @@ def run_pipeline(raw_message: str, sender: str | None = None) -> tuple[dict, dic
 
     # Final handoff marker
     trace.append({
-        "agent": "FlowPilot", "model": "—", "type": "handoff", "verdict": "ready",
+        "agent": "Relay", "model": "—", "type": "handoff", "verdict": "ready",
         "duration_ms": 0, "content": "Draft routed to a human for approval.",
     })
 
@@ -71,7 +71,7 @@ def draft_confirmation(quote: dict, human_notes: str | None = None) -> tuple[dic
     t0 = time.time()
     base_msg = quote.get("customer_message", "")
     prompt = (
-        "You are FlowPilot finalizing an approved HVAC quote confirmation for the "
+        "You are Relay finalizing an approved HVAC quote confirmation for the "
         "customer. Polish this into a friendly, professional confirmation email. "
         "Keep it concise. Include the total and the recommended appointment. "
         "Write it as a warm, human email with normal paragraph breaks. Do NOT use "

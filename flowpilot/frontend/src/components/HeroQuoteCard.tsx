@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-// Animated hero quote card (ported from FlowPilot Hero.dc.html).
+// Animated hero quote card (ported from Relay Hero.dc.html).
 // Floats gently, reveals each row in sequence, and counts the total up to $4,746
 // on a ~9.2s loop. Pure requestAnimationFrame; the buttons launch the demo.
 

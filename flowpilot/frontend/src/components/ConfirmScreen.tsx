@@ -38,7 +38,7 @@ export function ConfirmScreen({ lead, onBack }: { lead: Lead; onBack: () => void
           Quote sent to <span className="ital indigo">{firstName}.</span>
         </h2>
         <p className="muted" style={{ fontSize: 16, margin: "14px auto 0", maxWidth: 420 }}>
-          FlowPilot delivered a polished quote and is holding the recommended slot. You'll get a ping
+          Relay delivered a polished quote and is holding the recommended slot. You'll get a ping
           the moment they reply.
         </p>
 

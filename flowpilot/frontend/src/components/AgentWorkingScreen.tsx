@@ -36,7 +36,7 @@ export function AgentWorkingScreen({
     <div className="center">
       <div className="agentwrap">
         <div style={{ textAlign: "center", marginBottom: 6 }}>
-          <span className="eyebrow">FlowPilot agent team · live run</span>
+          <span className="eyebrow">Relay agent team · live run</span>
         </div>
         <h2 className="serif" style={{ fontSize: 34, textAlign: "center", margin: "8px 0 0" }}>
           The team is on <span className="ital indigo">{name}'s</span> inquiry…

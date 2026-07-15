@@ -1,4 +1,4 @@
-# FlowPilot 🛩️
+# Relay 🛩️
 
 **An autopilot agent that turns chaotic home-service inquiries into approved quotes in under a minute, with multi-agent reasoning, real tools, and a human sign-off.**
 
@@ -6,19 +6,19 @@ Built for the **Global AI Hackathon Series with Qwen Cloud**, Track 4: Autopilot
 
 ---
 
-A messy customer message comes in, something like *"AC blowing warm + rattling, can someone come this week?"* or just *"how much for ac"*. FlowPilot reads it, works out the job and how urgent it is, looks up real pricing and calendar availability, and drafts a quote it can actually defend. It flags every assumption it had to make and tiers the quote by risk. A human dispatcher then reviews it, edits anything they want, and approves. Only after that does FlowPilot send the customer a polished confirmation. Every decision along the way is recorded in a clear, step by step trace.
+A messy customer message comes in, something like *"AC blowing warm + rattling, can someone come this week?"* or just *"how much for ac"*. Relay reads it, works out the job and how urgent it is, looks up real pricing and calendar availability, and drafts a quote it can actually defend. It flags every assumption it had to make and tiers the quote by risk. A human dispatcher then reviews it, edits anything they want, and approves. Only after that does Relay send the customer a polished confirmation. Every decision along the way is recorded in a clear, step by step trace.
 
 It isn't a chatbot. It's a worker that finishes a real back-office job.
 
 ## The problem
 
-Home-service businesses like HVAC, plumbing, and cleaning lose work to slow quotes. Pricing a single inquiry by hand eats 15 to 30 minutes of a skilled tech's or owner's time, and homeowners tend to hire whoever replies first. The inquiries that go cold are usually the ones that land at night or on a weekend. FlowPilot closes that gap to about 30 seconds while keeping a person firmly in control.
+Home-service businesses like HVAC, plumbing, and cleaning lose work to slow quotes. Pricing a single inquiry by hand eats 15 to 30 minutes of a skilled tech's or owner's time, and homeowners tend to hire whoever replies first. The inquiries that go cold are usually the ones that land at night or on a weekend. Relay closes that gap to about 30 seconds while keeping a person firmly in control.
 
 ## How it works: a team of agents
 
-FlowPilot is built as a small crew of specialists rather than one giant prompt. Each one has a single job, and they hand work down the line. Two of the steps are plain deterministic code (no AI), which is exactly the point: the safety checks sit between the AI steps, so a number can't reach a customer without being re-verified by hand.
+Relay is built as a small crew of specialists rather than one giant prompt. Each one has a single job, and they hand work down the line. Two of the steps are plain deterministic code (no AI), which is exactly the point: the safety checks sit between the AI steps, so a number can't reach a customer without being re-verified by hand.
 
-![FlowPilot architecture](docs/architecture.svg)
+![Relay architecture](docs/architecture.svg)
 
 ```
 inquiry
@@ -48,7 +48,7 @@ The pipeline is presented as a named crew so the dispatcher always knows who did
 
 ### Why this fits Track 4
 
-| Rubric criterion | How FlowPilot delivers |
+| Rubric criterion | How Relay delivers |
 |---|---|
 | **Ambiguous inputs** | Infers intent from vague text and surfaces its assumptions instead of guessing silently |
 | **External tool use** | `get_pricing_book`, `check_calendar_availability`, and `save_quote`, all chosen by the agent on its own |

@@ -26,7 +26,7 @@ export function InboxScreen({ leads, onOpen }: { leads: Lead[]; onOpen: (l: Lead
 
       {leads.length === 0 && (
         <div className="muted" style={{ fontSize: 14, padding: "60px 0", textAlign: "center" }}>
-          No inquiries yet. Hit <strong>+ New inquiry</strong> to watch FlowPilot work.
+          No inquiries yet. Hit <strong>+ New inquiry</strong> to watch Relay work.
         </div>
       )}
 

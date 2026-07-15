@@ -2,7 +2,7 @@
   <rect width="1280" height="580" fill="#f4f2ec"/>
 
   <!-- title -->
-  <text x="40" y="56" font-size="30" font-style="italic" font-family="Instrument Serif, Georgia, serif" fill="#16140d">FlowPilot</text>
+  <text x="40" y="56" font-size="30" font-style="italic" font-family="Instrument Serif, Georgia, serif" fill="#16140d">Relay</text>
   <text x="180" y="56" font-size="16" fill="#777163">a multi-agent intake to quote pipeline</text>
   <text x="40" y="82" font-size="12" letter-spacing="2" fill="#777163">AUTONOMOUS REASONING · REAL TOOLS · HUMAN SIGN-OFF · POWERED BY QWEN CLOUD</text>
 

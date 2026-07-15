@@ -31,7 +31,7 @@ export function Rail({ awaiting }: { awaiting: number }) {
     <div className="rail">
       <div className="logo">
         <span className="dot" />
-        Flow<span className="serif ital indigo" style={{ fontSize: 22 }}>Pilot</span>
+        Re<span className="serif ital indigo" style={{ fontSize: 22 }}>lay</span>
       </div>
       {NAV.map((n) => (
         <div key={n.label} className={`navi${n.on ? " on" : ""}${n.soon ? " soon" : ""}`}>

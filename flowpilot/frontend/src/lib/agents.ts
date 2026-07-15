@@ -1,4 +1,4 @@
-// The FlowPilot agent cast — personas layered over the backend's agent roles so the
+// The Relay agent cast — personas layered over the backend's agent roles so the
 // pipeline reads like a team, not a list of functions.
 
 export interface AgentPersona {
@@ -31,8 +31,8 @@ export const AGENTS: Record<string, AgentPersona> = {
     name: "Quill", role: "Confirmation Writer", initial: "Q", emoji: "✍️", color: "#7a5cd0",
     blurb: "writes the customer's confirmation",
   },
-  "FlowPilot": {
-    name: "FlowPilot", role: "Orchestrator", initial: "✦", emoji: "✦", color: "#16140d",
+  "Relay": {
+    name: "Relay", role: "Orchestrator", initial: "✦", emoji: "✦", color: "#16140d",
     blurb: "hands off to you",
   },
 };

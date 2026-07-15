@@ -1,7 +1,7 @@
-# FlowPilot — Alibaba Cloud (ECS) Deployment
+# Relay — Alibaba Cloud (ECS) Deployment
 
 One Docker container serves the whole app (FastAPI API + bundled React frontend)
-on port 80. End result: a public URL judges can click, with FlowPilot's agents
+on port 80. End result: a public URL judges can click, with Relay's agents
 running on **Qwen Cloud**.
 
 ---
@@ -55,7 +55,7 @@ docker compose exec flowpilot python seed_demo.py
 curl localhost/health        # -> {"status":"ok","model":"qwen3.7-max"}
 ```
 
-Then open **`http://<public-ip>`** in a browser — the full FlowPilot app, live,
+Then open **`http://<public-ip>`** in a browser — the full Relay app, live,
 agents running on Qwen Cloud. That's your **Alibaba Cloud proof**.
 
 > No GitHub yet? Copy the folder up instead of `git clone`:
