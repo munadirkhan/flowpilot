@@ -1,11 +1,12 @@
 """Relay API — autonomous HVAC intake-to-quote agent with human-in-the-loop."""
 from contextlib import asynccontextmanager
 
-from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException
+from fastapi import BackgroundTasks, Depends, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session, select
 
 from .agent.orchestrator import draft_confirmation, run_pipeline
+from .agent.transcriber import transcribe
 from .config import get_settings
 from .db import engine, get_session, init_db
 from .models import ApprovalDecision, Lead, LeadCreate, LeadStatus, utcnow
@@ -64,6 +65,20 @@ def _process_lead(lead_id: int) -> None:
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok", "model": settings.qwen_agent_model}
+
+
+@app.post("/transcribe")
+async def transcribe_audio(audio: UploadFile = File(...)) -> dict:
+    """Voice intake: turn a customer's spoken message into inquiry text (qwen3-asr-flash)."""
+    data = await audio.read()
+    if not data:
+        raise HTTPException(400, "empty audio upload")
+    if len(data) > 8 * 1024 * 1024:  # keep base64 payload under Qwen's 10 MB cap
+        raise HTTPException(413, "audio too large (8 MB max)")
+    try:
+        return transcribe(data, audio.filename or "audio.wav")
+    except Exception as exc:  # noqa: BLE001 — surface ASR errors to the UI
+        raise HTTPException(502, f"transcription failed: {exc}") from exc
 
 
 @app.post("/leads", response_model=Lead, status_code=201)

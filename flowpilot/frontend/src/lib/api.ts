@@ -81,7 +81,20 @@ async function j<T>(res: Response): Promise<T> {
   return res.json() as Promise<T>;
 }
 
+export interface TranscribeResult {
+  text: string;
+  model: string;
+  duration_ms: number;
+}
+
 export const api = {
+  transcribe: (audio: Blob, filename = "recording.wav") => {
+    const form = new FormData();
+    form.append("audio", audio, filename);
+    return fetch(`${BASE}/transcribe`, { method: "POST", body: form }).then((r) =>
+      j<TranscribeResult>(r)
+    );
+  },
   listLeads: () => fetch(`${BASE}/leads`).then((r) => j<Lead[]>(r)),
   getLead: (id: number) => fetch(`${BASE}/leads/${id}`).then((r) => j<Lead>(r)),
   createLead: (body: { raw_message: string; sender?: string; channel?: string }) =>
