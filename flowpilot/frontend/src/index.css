@@ -26,6 +26,8 @@ a{color:inherit}
 .navi{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:11px;color:#544f43;font-size:14.5px;font-weight:500;cursor:pointer;transition:background .15s,color .15s;margin-bottom:2px}
 .navi:hover{background:rgba(22,20,13,.04);color:#16140d}
 .navi.on{background:#16140d;color:#f4f2ec}
+.navi.soon{cursor:default}
+.navi.soon:hover{background:transparent;color:#544f43}
 .navi .ic{width:18px;text-align:center;font-size:15px}
 .railb{margin-top:auto;display:flex;align-items:center;gap:11px;padding:12px 10px;border-top:1px solid #e7e2d6}
 .av{width:34px;height:34px;border-radius:50%;background:#3a48d6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
