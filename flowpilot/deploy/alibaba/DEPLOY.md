@@ -6,6 +6,26 @@ running on **Qwen Cloud**.
 
 ---
 
+## ✅ Live deployment (proof)
+
+Relay's backend is deployed and running on **Alibaba Cloud ECS**:
+
+| | |
+|---|---|
+| **Live URL** | <http://47.237.130.241> |
+| **Service** | Alibaba Cloud Elastic Compute Service (ECS) |
+| **Instance ID** | `i-t4n5zzjv7yjqzs8a5wqi` |
+| **Region / Zone** | Singapore (ap-southeast-1) |
+| **Instance type** | `ecs.e-c1m2.large` (2 vCPU / 4 GiB, Economy) |
+| **Image** | Ubuntu 22.04 64-bit |
+| **Runtime** | Docker (single container: FastAPI + built React SPA, port 80) |
+| **Models** | Qwen Cloud via DashScope International — `qwen3.7-max`, `qwen3.5-flash`, `qwen3-asr-flash` |
+
+Deployment configuration in this repo: [`Dockerfile`](../../Dockerfile) ·
+[`docker-compose.yml`](../../docker-compose.yml) · this runbook.
+
+---
+
 ## Part A — What YOU do (Alibaba Cloud account + server)
 
 > Do this once. ~20–30 min. ECS is not free, but a tiny burstable instance is
