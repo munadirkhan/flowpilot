@@ -14,9 +14,22 @@ from .models import ApprovalDecision, Lead, LeadCreate, LeadStatus, utcnow
 settings = get_settings()
 
 
+def _seed_if_empty() -> None:
+    """Fresh container = fresh SQLite. Auto-seed demo leads so the inbox is never blank."""
+    with Session(engine) as session:
+        if session.exec(select(Lead)).first() is not None:
+            return
+    try:
+        import seed_demo
+        seed_demo.main()
+    except Exception as exc:  # noqa: BLE001 — seeding is best-effort, never block startup
+        print(f"[startup] demo seed skipped: {exc}")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+    _seed_if_empty()
     yield
 
 
