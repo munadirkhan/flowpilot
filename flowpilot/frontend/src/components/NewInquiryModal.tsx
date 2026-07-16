@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { api } from "../lib/api";
-import { startRecording, type Recorder } from "../lib/recorder";
+import { micSupported, startRecording, type Recorder } from "../lib/recorder";
 
 const PRESETS: { name: string; sender: string; text: string; channel: string }[] = [
   {
@@ -75,7 +75,8 @@ export function NewInquiryModal({
       const r = await api.transcribe(blob, filename);
       typeIn(r.text);
       setChannel("phone");
-      if (source === "voicemail" && !sender) setSender("Munadir Khan");
+      // The voicemail names its own caller, so it always wins over a leftover preset.
+      if (source === "voicemail") setSender("Munadir Khan");
       setVoice({ kind: "done", ms: r.duration_ms });
     } catch (e) {
       setVoice({ kind: "error", message: (e as Error).message });
@@ -143,13 +144,15 @@ export function NewInquiryModal({
       default:
         return (
           <span className="muted">
-            In production this is your phone line (Twilio/Vapi) — here, play a sample call or speak.
+            In production this is your phone line (Twilio/Vapi). Here, play a real customer call
+            {micSupported() ? " or speak your own." : ". Live mic is HTTPS-only, so it's disabled on this demo."}
           </span>
         );
     }
   };
 
   const transcribing = voice.kind === "transcribing";
+  const canUseMic = micSupported();
 
   return (
     <div className="scrim" onClick={onClose}>
@@ -187,13 +190,18 @@ export function NewInquiryModal({
                 </button>
                 <button
                   className="chipx"
+                  title={
+                    canUseMic
+                      ? "Record your own inquiry"
+                      : "Live mic needs HTTPS. Works when running Relay on localhost."
+                  }
                   style={
                     voice.kind === "recording"
                       ? { background: "var(--rose)", color: "#fff", borderColor: "var(--rose)" }
-                      : { background: "var(--card)" }
+                      : { background: "var(--card)", opacity: canUseMic ? 1 : 0.5 }
                   }
                   onClick={toggleMic}
-                  disabled={voice.kind === "playing" || transcribing}
+                  disabled={voice.kind === "playing" || transcribing || !canUseMic}
                 >
                   {voice.kind === "recording" ? "■ Stop & transcribe" : "🎙 Speak the inquiry"}
                 </button>

@@ -5,7 +5,21 @@ export interface Recorder {
   stop: () => Promise<Blob>;
 }
 
+/**
+ * Browsers only expose mic capture on a secure origin (HTTPS, or localhost).
+ * On plain HTTP `navigator.mediaDevices` is undefined entirely, so check before use.
+ */
+export function micSupported(): boolean {
+  return (
+    typeof navigator !== "undefined" &&
+    typeof navigator.mediaDevices?.getUserMedia === "function"
+  );
+}
+
 export async function startRecording(): Promise<Recorder> {
+  if (!micSupported()) {
+    throw new Error("Live mic needs a secure origin (HTTPS or localhost).");
+  }
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   const ctx = new AudioContext();
   const source = ctx.createMediaStreamSource(stream);
