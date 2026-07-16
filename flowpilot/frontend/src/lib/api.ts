@@ -96,6 +96,10 @@ export const api = {
     );
   },
   listLeads: () => fetch(`${BASE}/leads`).then((r) => j<Lead[]>(r)),
+  deleteLead: async (id: number) => {
+    const r = await fetch(`${BASE}/leads/${id}`, { method: "DELETE" });
+    if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
+  },
   getLead: (id: number) => fetch(`${BASE}/leads/${id}`).then((r) => j<Lead>(r)),
   createLead: (body: { raw_message: string; sender?: string; channel?: string }) =>
     fetch(`${BASE}/leads`, {

@@ -13,7 +13,15 @@ function customerName(l: Lead) {
   return l.quote?.customer_name || l.sender || "Unknown sender";
 }
 
-export function InboxScreen({ leads, onOpen }: { leads: Lead[]; onOpen: (l: Lead) => void }) {
+export function InboxScreen({
+  leads,
+  onOpen,
+  onDelete,
+}: {
+  leads: Lead[];
+  onOpen: (l: Lead) => void;
+  onDelete: (l: Lead) => void;
+}) {
   return (
     <div className="scroll">
       <div className="listhead">
@@ -46,6 +54,17 @@ export function InboxScreen({ leads, onOpen }: { leads: Lead[]; onOpen: (l: Lead
             <div className={`amt serif ${hasAmt ? "emerald" : "muted"}`} style={hasAmt ? undefined : { opacity: 0.5 }}>
               {hasAmt ? moneyWhole(l.quote.total) : "—"}
             </div>
+            <button
+              className="rowdel"
+              title={`Delete ${customerName(l)}'s inquiry`}
+              aria-label="Delete inquiry"
+              onClick={(e) => {
+                e.stopPropagation(); // don't open the lead
+                onDelete(l);
+              }}
+            >
+              ✕
+            </button>
           </div>
         );
       })}

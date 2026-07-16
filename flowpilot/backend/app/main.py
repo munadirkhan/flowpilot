@@ -119,6 +119,16 @@ def get_lead(lead_id: int, session: Session = Depends(get_session)) -> Lead:
     return lead
 
 
+@app.delete("/leads/{lead_id}", status_code=204)
+def delete_lead(lead_id: int, session: Session = Depends(get_session)) -> None:
+    """Dispatcher housekeeping: clear an inquiry out of the inbox."""
+    lead = session.get(Lead, lead_id)
+    if not lead:
+        raise HTTPException(404, "lead not found")
+    session.delete(lead)
+    session.commit()
+
+
 @app.post("/leads/{lead_id}/decision", response_model=Lead)
 def decide(lead_id: int, decision: ApprovalDecision,
            session: Session = Depends(get_session)) -> Lead:

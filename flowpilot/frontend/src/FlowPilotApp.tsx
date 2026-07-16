@@ -99,6 +99,19 @@ export default function FlowPilotApp() {
     }
   };
 
+  const removeLead = async (l: Lead) => {
+    setLeads((prev) => prev.filter((x) => x.id !== l.id)); // optimistic
+    if (activeId === l.id) {
+      setActiveId(null);
+      setScreen("inbox");
+    }
+    try {
+      await api.deleteLead(l.id);
+    } catch (e) {
+      setErr((e as Error).message); // the poll will restore it if the delete failed
+    }
+  };
+
   const backToInbox = () => {
     setScreen("inbox");
     setActiveId(null);
@@ -123,7 +136,7 @@ export default function FlowPilotApp() {
               pipeline={stats.pipeline}
               onNew={() => setShowNew(true)}
             />
-            <InboxScreen leads={leads} onOpen={openLead} />
+            <InboxScreen leads={leads} onOpen={openLead} onDelete={removeLead} />
           </>
         )}
 
