@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
 
 const NAV = [
@@ -31,10 +32,15 @@ function SoonPill() {
 export function Rail({ awaiting }: { awaiting: number }) {
   return (
     <div className="rail">
-      <div className="logo">
+      <Link
+        to="/"
+        className="logo"
+        title="Back to the landing page"
+        style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+      >
         <span className="dot" />
         Re<span className="serif ital indigo" style={{ fontSize: 22 }}>lay</span>
-      </div>
+      </Link>
       {NAV.map((n) => (
         <div key={n.label} className={`navi${n.on ? " on" : ""}${n.soon ? " soon" : ""}`}>
           <span className="ic">{n.ic}</span>
