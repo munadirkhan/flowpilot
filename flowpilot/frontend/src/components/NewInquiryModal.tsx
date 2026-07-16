@@ -75,7 +75,7 @@ export function NewInquiryModal({
       const r = await api.transcribe(blob, filename);
       typeIn(r.text);
       setChannel("phone");
-      if (source === "voicemail" && !sender) setSender("Marcus Whitfield");
+      if (source === "voicemail" && !sender) setSender("Munadir Khan");
       setVoice({ kind: "done", ms: r.duration_ms });
     } catch (e) {
       setVoice({ kind: "error", message: (e as Error).message });
